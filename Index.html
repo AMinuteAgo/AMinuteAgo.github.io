@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }​
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Evan's Website - Welcome</title>
 </head>
 <body>
-
-    <h1>Welcome to My Interactive Site</h1>
-    <p>Click the button to change its color!</p>
-
-    <button id="colorButton">Change Color</button>
-
-    <script>
-        const button = document.getElementById('colorButton');
-
-        button.addEventListener('click', function() {
-            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            button.style.backgroundColor = randomColor;
-        });
-    </script>
-
+    <header>
+        <h1>Evan's Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="games.html">Games</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main-content">
+        <h2>Welcome to My Website!</h2>
+        <p>Hello, I'm AlmondKitKat This is my personal website where I share my interests and some fun in-browser games. Feel free to explore!</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 AlmondKitKat All rights reserved.</p>
+    </footer>
 </body>
 </html>
