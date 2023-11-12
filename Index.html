@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Evan's Website - Welcome</title>
+    <title>Web Scraping Example</title>
 </head>
 <body>
-    <header>
-        <h1>Evan's Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="games.html">Games</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="main-content">
-        <h2>Welcome to My Website!</h2>
-        <p>Hello, I'm AlmondKitKat This is my personal website where I share my interests and some fun in-browser games. Feel free to explore!</p>
-    </section>
-    <footer>
-        <p>&copy; 2023 AlmondKitKat All rights reserved.</p>
-    </footer>
+    <h1>Web Scraping Example</h1>
+    
+    <form id="searchForm">
+        <label for="searchQuery">Enter search query:</label>
+        <input type="text" id="searchQuery" name="searchQuery" required>
+        <button type="button" onclick="scrapeAmazon()">Scrape Amazon</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        function scrapeAmazon() {
+            var searchQuery = document.getElementById('searchQuery').value;
+            var resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'scrape_amazon?searchQuery=' + searchQuery, true);
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    response.forEach(function(product) {
+                        var productTitle = document.createElement('p');
+                        productTitle.textContent = product;
+                        resultsContainer.appendChild(productTitle);
+                    });
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
 </body>
 </html>
