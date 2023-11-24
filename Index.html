@@ -3,41 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Scraping Example</title>
+    <title>Yiddish Learning</title>
+
 </head>
 <body>
-    <h1>Web Scraping Example</h1>
-    
-    <form id="searchForm">
-        <label for="searchQuery">Enter search query:</label>
-        <input type="text" id="searchQuery" name="searchQuery" required>
-        <button type="button" onclick="scrapeAmazon()">Scrape Amazon</button>
-    </form>
 
-    <div id="results"></div>
+<!-- Header Section -->
+<header>
+    <div>
+        <img src="logo.png" alt="Yiddish Learning Logo">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Alphabet</a></li>
+                <li><a href="#">Vocabulary</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <!-- Language Switch Option -->
+    </div>
+</header>
 
-    <script>
-        function scrapeAmazon() {
-            var searchQuery = document.getElementById('searchQuery').value;
-            var resultsContainer = document.getElementById('results');
-            resultsContainer.innerHTML = ''; // Clear previous results
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2023 Yiddish Learning. All rights reserved.</p>
+</footer>
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'scrape_amazon?searchQuery=' + searchQuery, true);
-
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    response.forEach(function(product) {
-                        var productTitle = document.createElement('p');
-                        productTitle.textContent = product;
-                        resultsContainer.appendChild(productTitle);
-                    });
-                }
-            };
-
-            xhr.send();
-        }
-    </script>
 </body>
 </html>
