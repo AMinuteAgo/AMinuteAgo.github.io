@@ -1,21 +1,32 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-header {
-    background-color: #333;
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, #2980b9, #6dd5fa);
     color: #fff;
     text-align: center;
-    padding: 1em 0;
+}
+
+/* Header Styles */
+header {
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+}
+
+header img {
+    max-width: 150px;
+    height: auto;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -23,16 +34,43 @@ nav ul li {
     margin-right: 20px;
 }
 
-section.main-content {
+/* Section Styles */
+section {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-    text-align: center;
-    padding: 1em 0;
-    background-color: #333;
+section h1, section h2 {
+    color: #2980b9;
+}
+
+section a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #2980b9;
     color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out;
+}
+
+section a:hover {
+    background-color: #3498db;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
