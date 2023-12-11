@@ -18,7 +18,11 @@
     
     <button onclick="getRandomSurah()">Get Random Surah</button>
 
-    <p id="surahDisplay"></p>
+    <div id="surahDisplay">
+        <p id="english"></p>
+        <p id="arabic"></p>
+        <p id="transliteration"></p>
+    </div>
 
     <script>
         async function getRandomSurah() {
@@ -27,9 +31,13 @@
                 const response = await fetch('https://api.alquran.cloud/v1/ayah/' + Math.floor(Math.random() * 6236));
                 const data = await response.json();
 
-                // Display the randomly selected surah
+                // Display the randomly selected surah in English, Arabic, and transliteration
                 const surahDisplay = document.getElementById("surahDisplay");
-                surahDisplay.textContent = "Random Surah: " + data.data.surah.name + " - Ayah " + data.data.numberInSurah;
+                surahDisplay.innerHTML = `
+                    <p id="english">English: ${data.data.surah.englishName}</p>
+                    <p id="arabic">Arabic: ${data.data.surah.name}</p>
+                    <p id="transliteration">Transliteration: ${data.data.surah.transliteration}</p>
+                `;
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
