@@ -65,8 +65,8 @@
                 // Display the randomly selected ayah in Arabic, English, and transliteration
                 const ayahDisplay = document.getElementById("ayahDisplay");
                 document.getElementById("ayahTextArabic").textContent = `Ayah (Arabic): ${data.data.text || 'Not available'}`;
-                document.getElementById("ayahTextEnglish").textContent = `Ayah (English): ${data.data.translation || 'Not available'}`;
-                document.getElementById("ayahTransliteration").textContent = `Transliteration: ${data.data.transliteration || 'Not available'}`;
+                document.getElementById("ayahTextEnglish").textContent = `Ayah (English): ${data.data.translation ? data.data.translation : 'Not available'}`;
+                document.getElementById("ayahTransliteration").textContent = `Transliteration: ${data.data.transliteration ? data.data.transliteration : 'Not available'}`;
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
