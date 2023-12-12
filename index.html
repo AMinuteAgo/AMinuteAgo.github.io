@@ -63,32 +63,4 @@
         async function getRandomSurah() {
             try {
                 // Fetch a random surah from the alquran.cloud API
-                const response = await fetch('https://api.alquran.cloud/v1/surah/' + Math.floor(Math.random() * 114));
-                const data = await response.json();
-
-                // Display the randomly selected surah in Arabic and English
-                const surahDisplay = document.getElementById("surahDisplay");
-                document.getElementById("surahNameArabic").textContent = `Surah Name (Arabic): ${data.data.name}`;
-                document.getElementById("surahNameEnglish").textContent = `Surah Name (English): ${data.data.englishName}`;
-
-                // Format and display the Surah text in Arabic, English, and transliteration
-                document.getElementById("surahText").innerHTML = formatSurahText(data.data.ayahs);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        }
-
-        function formatSurahText(ayahs) {
-            // Format the Surah text in Arabic, English, and transliteration
-            return ayahs.map(ayah => `
-                <div>
-                    <p>Arabic: ${ayah.text}</p>
-                    <p>English: ${ayah.translation}</p>
-                    <p>Transliteration: ${ayah.transliteration ? ayah.transliteration : 'Not available'}</p>
-                </div>
-            `).join('');
-        }
-    </script>
-
-</body>
-</html>
+                const response = await fetch('https://api.alquran.cloud/v1/surah/' + Math.floor(Math⬤
