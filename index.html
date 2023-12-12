@@ -6,37 +6,111 @@
     <title>Quran Learning</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: #fff;
+            overflow-x: hidden; /* Prevent horizontal scrolling on smaller screens */
         }
 
         header {
-            background-color: #333;
+            background-color: #2c3e50;
             color: #fff;
             text-align: center;
             padding: 1em 0;
         }
 
         nav {
-            background-color: #555;
+            background-color: #34495e;
             color: #fff;
             padding: 0.5em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #3498db;
         }
 
         section {
             padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         footer {
-            background-color: #333;
+            background-color: #2c3e50;
             color: #fff;
             text-align: center;
             padding: 1em 0;
             position: absolute;
             bottom: 0;
             width: 100%;
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -53,31 +127,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $message = $_POST["message"];
-
-        // Replace 'your_email@example.com' with your actual email address where you want to receive the form submissions
-        $to = "your_email@example.com";
-        $subject = "New Contact Form Submission";
-        $headers = "From: $email";
-
-        // Compose the email message
-        $email_message = "Name: $name\n";
-        $email_message .= "Email: $email\n\n";
-        $email_message .= "Message:\n$message";
-
-        // Send the email and display a confirmation message
-        if (mail($to, $subject, $email_message, $headers)) {
-            $confirmation_message = "Thank you for your message, $name! We will get back to you soon.";
-        } else {
-            $confirmation_message = "Oops! Something went wrong. Please try again later.";
-        }
-    }
-    ?>
 
     <section id="about">
         <h2>About Us</h2>
@@ -100,7 +149,7 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <?php if (isset($confirmation_message)): ?>
-            <p><?php echo $confirmation_message; ?></p>
+            <p style="color: #28a745; font-weight: bold;"><?php echo $confirmation_message; ?></p>
         <?php else: ?>
             <p>Have questions or feedback? We'd love to hear from you! Contact us through the form below or reach out via email or phone. Your input is valuable as we strive to improve and provide a better learning experience for our community.</p>
             <form action="process_form.php" method="post">
