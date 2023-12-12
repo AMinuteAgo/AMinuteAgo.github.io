@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran - QuranSurah.tech</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Quran Learning</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Quran.html">Quran</a></li>
+            <li><a href="Allah.html">Allah</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Quran</h2>
+        <p>The Quran, the holy book of Islam, is a source of guidance for millions of people worldwide. Here, you can find translations, interpretations, and commentaries to help you comprehend the verses and messages within the Quran. Dive into the rich tapestry of stories, lessons, and wisdom that the Quran imparts to its followers.</p>
+        <p>Additionally, we provide study guides, audio recitations, and videos to aid your learning process. Whether you're looking to understand the fundamentals or delve into more advanced topics, our resources are designed to cater to learners of all levels.</p>
+
+        <!-- PDF Download Link -->
+        <h3>Quran Study Guides</h3>
+        <p>Download our study guide to enhance your Quran learning:</p>
+        <ul>
+           <!-- PDF Download Link -->
+            <h3>Quran Study Guides</h3>
+            <p>Download our study guide to enhance your Quran learning:</p>
+            <ul>
+            <li><a href="https://www.alislam.org/library/books/Introduction-Study-Holy-Quran.pdf" target="_blank" download>Introduction to the Study of the Holy Quran</a></li>
+            <li><a href="https://traditionalhikma.com/wp-content/uploads/2015/02/Ya-Sin-Commentary-from-the-Study-Quran.pdf" target="_blank" download>Ya-Sin Commentary from the Study Quran</a></li>
+            </ul>
+        </ul>
+
+        <!-- YouTube Video Embeds -->
+        <h3>Explore the Quran on YouTube</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zMUtS4V-UeE?si=0rCHBJeW2qHRAqwL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lVaussf5Y_U?si=VjDbLkl3-d3Hu9LB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 QuranSurah.tech. All rights reserved.</p>
+    </footer>
+</body>
+</html>
