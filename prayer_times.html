@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Islamic Guide - Prayer Times</title>
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Islamic Guide</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Prayer Times</h2>
+            <form id="prayerForm">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+
+                <button type="button" onclick="fetchPrayerTimes()">Get Prayer Times</button>
+            </form>
+
+            <p id="prayerTimesInfo">Enter your city and country to fetch prayer times.</p>
+
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script src="prayer_times_script.js"></script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Islamic Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>
